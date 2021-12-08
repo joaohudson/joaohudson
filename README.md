@@ -36,6 +36,6 @@
   
   ##
   
-- 🔭 I’m currently working on Conductor Tecnologia S.A.
+- 🔭 I’m currently working on ProjecTI.
 - 🎮 I have a strong interest in game development, I already have experience in the area.
 - 💻 I have experience with back end, front end and mobile development 📴
