@@ -271,7 +271,7 @@ ul { list-style: none; margin: 0; padding: 0; }
           <p data-i18n="about2">O que mais me motiva é estabilidade em produção. Gosto de investigar falhas difíceis de rastrear, chegar à causa raiz e deixar o sistema mais resistente. Também valorizo código bem testado, revisões cuidadosas e compartilhar conhecimento com o time.</p>        </div>
         <h3 class="sub" data-i18n="howTitle">Como eu trabalho</h3>
         <ul class="principles">
-          <li><h4 data-i18n="p1t">Diagnóstico de falhas</h4><p data-i18n="p1d">Investigo incidentes até a causa raiz e implemento salvaguardas para que não se repitam.</p></li>
+          <li><h4 data-i18n="p1t">Diagnóstico de falhas</h4><p data-i18n="p1d">Chego à origem de problemas complexos e deixo o sistema mais estável a cada ocorrência.</p></li>
           <li><h4 data-i18n="p2t">Performance e arquitetura</h4><p data-i18n="p2d">Desenho e otimizo serviços, consultas e fluxos para alto volume, mantendo a estabilidade.</p></li>
           <li><h4 data-i18n="p3t">Qualidade</h4><p data-i18n="p3d">Testes automatizados, revisão de código e boas práticas fazem parte de cada entrega.</p></li>
           <li><h4 data-i18n="p4t">Liderança técnica</h4><p data-i18n="p4d">Apoio decisões técnicas, ajudo a definir padrões e oriento colegas no dia a dia.</p></li>
@@ -298,9 +298,9 @@ ul { list-style: none; margin: 0; padding: 0; }
         <ul class="log">
           <li><span class="tag" data-i18n="h1tag">confiabilidade</span><div><h3 data-i18n="h1t">Falhas difíceis de rastrear em produção</h3><p data-i18n="h1d">Investiguei e corrigi falhas em ambiente produtivo cuja causa era difícil de identificar, atuando na origem do problema para evitar que voltassem.</p></div></li>
           <li><span class="tag">performance</span><div><h3 data-i18n="h2t">Consulta mais lenta cerca de 100× mais rápida</h3><p data-i18n="h2d">Reestruturei uma base MongoDB e a consulta mais lenta passou a responder cerca de 100 vezes mais rápido.</p></div></li>
-          <li><span class="tag" data-i18n="h3tag">dados</span><div><h3 data-i18n="h3t">Alto volume de ingestão sem perda de dados</h3><p data-i18n="h3d">Implementei fluxos preparados para alto volume de ingestão, protegendo informações críticas, como parcelas, contra perda.</p></div></li>
+          <li><span class="tag" data-i18n="h3tag">dados</span><div><h3 data-i18n="h3t">Alto volume de ingestão sem perda de dados</h3><p data-i18n="h3d">Implementei fluxos preparados para alto volume de ingestão, protegendo informações críticas, como pagamentos de parcelas, contra perda.</p></div></li>
           <li><span class="tag" data-i18n="h4tag">modernização</span><div><h3 data-i18n="h4t">Legado migrado para tecnologia atual</h3><p data-i18n="h4d">Migrei um sistema legado para um novo serviço construído com tecnologia moderna.</p></div></li>
-          <li><span class="tag" data-i18n="h5tag">mentoria</span><div><h3 data-i18n="h5t">Agregações MongoDB aplicadas do jeito certo</h3><p data-i18n="h5d">Orientei o time no uso de agregações do MongoDB com anotações em Java, e a equipe passou a aplicar o padrão corretamente.</p></div></li>
+          <li><span class="tag" data-i18n="h5tag">mentoria</span><div><h3 data-i18n="h5t">Padronização de agregações no MongoDB</h3><p data-i18n="h5d">Orientei o time no uso de agregações do MongoDB integradas ao Spring Data, estabelecendo um padrão que a equipe passou a adotar no dia a dia.</p></div></li>
         </ul>
       </div>
     </section>
@@ -333,7 +333,7 @@ ul { list-style: none; margin: 0; padding: 0; }
     <div class="wrap">
       <h2 class="big" data-i18n="cTitle">Vamos conversar</h2>
       <div class="contact-row">
-        <p class="contact-text" data-i18n="cText">Se quiser trocar uma ideia sobre engenharia, sistemas críticos ou uma possível colaboração, vai ser um prazer conversar. O caminho mais rápido é uma mensagem no LinkedIn.</p>
+        <p class="contact-text" data-i18n="cText">Será um prazer conversar sobre uma possível colaboração. Me envie uma mensagem pelo LinkedIn.</p>
         <div class="biglinks">
           <a href="https://www.linkedin.com/in/jo%C3%A3o-hudson-lacerda-oliveira-3b4b84198/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/joaohudson" target="_blank" rel="noopener">GitHub</a>
@@ -393,7 +393,7 @@ ul { list-style: none; margin: 0; padding: 0; }
       uptime: "{Exp} em produção", today: "hoje",
       about1: "Sou engenheiro de software com cerca de {expWords} de experiência em sistemas do mercado financeiro, passando por pagamentos, crédito, carteira digital e programas de fidelidade. Atuo principalmente no back-end, com Java, Kotlin, Node.js e .NET, e no front-end trabalho sobretudo com React, com experiência também em Angular.",
       about2: "O que mais me motiva é estabilidade em produção. Gosto de investigar falhas difíceis de rastrear, chegar à causa raiz e deixar o sistema mais resistente. Também valorizo código bem testado, revisões cuidadosas e compartilhar conhecimento com o time.",      howTitle: "Como eu trabalho",
-      p1t: "Diagnóstico de falhas", p1d: "Investigo incidentes até a causa raiz e implemento salvaguardas para que não se repitam.",
+      p1t: "Diagnóstico de falhas", p1d: "Chego à origem de problemas complexos e deixo o sistema mais estável a cada ocorrência.",
       p2t: "Performance e arquitetura", p2d: "Desenho e otimizo serviços, consultas e fluxos para alto volume, mantendo a estabilidade.",
       p3t: "Qualidade", p3d: "Testes automatizados, revisão de código e boas práticas fazem parte de cada entrega.",
       p4t: "Liderança técnica", p4d: "Apoio decisões técnicas, ajudo a definir padrões e oriento colegas no dia a dia.",
@@ -404,15 +404,15 @@ ul { list-style: none; margin: 0; padding: 0; }
       d4t: "Crédito e serviços financeiros no varejo", d4d: "Braço financeiro de uma das maiores redes varejistas do país, com cartões, crédito e conta digital.",
       h1tag: "confiabilidade", h1t: "Falhas difíceis de rastrear em produção", h1d: "Investiguei e corrigi falhas em ambiente produtivo cuja causa era difícil de identificar, atuando na origem do problema para evitar que voltassem.",
       h2t: "Consulta mais lenta cerca de 100× mais rápida", h2d: "Reestruturei uma base MongoDB e a consulta mais lenta passou a responder cerca de 100 vezes mais rápido.",
-      h3tag: "dados", h3t: "Alto volume de ingestão sem perda de dados", h3d: "Implementei fluxos preparados para alto volume de ingestão, protegendo informações críticas, como parcelas, contra perda.",
+      h3tag: "dados", h3t: "Alto volume de ingestão sem perda de dados", h3d: "Implementei fluxos preparados para alto volume de ingestão, protegendo informações críticas, como pagamentos de parcelas, contra perda.",
       h4tag: "modernização", h4t: "Legado migrado para tecnologia atual", h4d: "Migrei um sistema legado para um novo serviço construído com tecnologia moderna.",
-      h5tag: "mentoria", h5t: "Agregações MongoDB aplicadas do jeito certo", h5d: "Orientei o time no uso de agregações do MongoDB com anotações em Java, e a equipe passou a aplicar o padrão corretamente.",
+      h5tag: "mentoria", h5t: "Padronização de agregações no MongoDB", h5d: "Orientei o time no uso de agregações do MongoDB integradas ao Spring Data, estabelecendo um padrão que a equipe passou a adotar no dia a dia.",
       gLang: "Linguagens", gData: "Dados e mensageria", gCloud: "Cloud e infraestrutura",
       eduTitle: "Formação",
       e1t: "Bacharelado em Ciência da Computação", e1d: "Graduação concluída",
       e2t: "Certificação Kubernetes", e2d: "Orquestração de containers",
       cTitle: "Vamos conversar",
-      cText: "Se quiser trocar uma ideia sobre engenharia, sistemas críticos ou uma possível colaboração, vai ser um prazer conversar. O caminho mais rápido é uma mensagem no LinkedIn.",
+      cText: "Será um prazer conversar sobre uma possível colaboração. Me envie uma mensagem pelo LinkedIn.",
       backTop: "Voltar ao topo"
     },
     en: {
@@ -426,7 +426,7 @@ ul { list-style: none; margin: 0; padding: 0; }
       uptime: "{Exp} in production", today: "today",
       about1: "I'm a software engineer with about {expWords} of experience in financial systems, spanning payments, credit, digital wallets and loyalty programs. I work mostly on the back end with Java, Kotlin, Node.js and .NET, and on the front end mainly with React, with experience in Angular as well.",
       about2: "What drives me most is stability in production. I enjoy investigating hard-to-trace failures, getting to the root cause and leaving the system more resilient. I also value well-tested code, careful reviews and sharing knowledge with the team.",      howTitle: "How I work",
-      p1t: "Failure diagnosis", p1d: "I investigate incidents down to the root cause and put safeguards in place so they don't happen again.",
+      p1t: "Failure diagnosis", p1d: "I get to the root of complex problems and leave the system more stable after each one.",
       p2t: "Performance and architecture", p2d: "I design and tune services, queries and pipelines for high volume while keeping them stable.",
       p3t: "Quality", p3d: "Automated tests, code review and sound engineering practices are part of every delivery.",
       p4t: "Technical leadership", p4d: "I support technical decisions, help set standards and mentor teammates day to day.",
@@ -437,15 +437,15 @@ ul { list-style: none; margin: 0; padding: 0; }
       d4t: "Retail credit and financial services", d4d: "The financial arm of one of Brazil's largest retail chains, offering cards, credit and digital accounts.",
       h1tag: "reliability", h1t: "Hard-to-trace production failures", h1d: "Investigated and fixed production failures whose cause was hard to pin down, addressing the source so they wouldn't return.",
       h2t: "Slowest query roughly 100× faster", h2d: "Restructured a MongoDB database so its slowest query became about 100 times faster.",
-      h3tag: "data", h3t: "High-volume ingestion with no data loss", h3d: "Built pipelines designed for high ingestion volumes that keep critical records, such as installments, from being lost.",
+      h3tag: "data", h3t: "High-volume ingestion with no data loss", h3d: "Built pipelines designed for high ingestion volumes that keep critical records, such as installment payments, from being lost.",
       h4tag: "modernization", h4t: "Legacy moved to a modern stack", h4d: "Migrated a legacy system to a new service built on modern technology.",
-      h5tag: "mentoring", h5t: "MongoDB aggregations done right", h5d: "Coached the team on MongoDB aggregations with Java annotations, and the team went on to apply the pattern correctly.",
+      h5tag: "mentoring", h5t: "Standardized MongoDB aggregations", h5d: "Coached the team on MongoDB aggregations integrated with Spring Data, setting a pattern the team adopted in its day-to-day work.",
       gLang: "Languages", gData: "Data and messaging", gCloud: "Cloud and infrastructure",
       eduTitle: "Education",
       e1t: "B.Sc. in Computer Science", e1d: "Completed",
       e2t: "Kubernetes certification", e2d: "Container orchestration",
       cTitle: "Let's talk",
-      cText: "If you'd like to talk engineering, critical systems or a possible collaboration, I'd be glad to connect. The quickest way is a message on LinkedIn.",
+      cText: "I'd be glad to talk about a possible collaboration. Send me a message on LinkedIn.",
       backTop: "Back to top"
     }
   };
