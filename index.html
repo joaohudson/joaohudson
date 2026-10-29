@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>João Hudson</title>
+<meta name="description" content="João Hudson, Engenheiro de Software Sênior com experiência em sistemas críticos do mercado financeiro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Direction: a forest-at-night editorial page. Deep pine ground with film grain, bone type, jade used sparingly.
+     Garamond display for the voice, a geometric sans for the facts. Left-aligned 12-column grid: headings in the first third, content in the last two. */
+  --bg: #0C1714;
+  --text: #ECE6D9;
+  --muted: #9BA79F;
+  --line: rgba(236, 230, 217, 0.13);
+  --jade: #8ED8B4;
+  --emerald: #2E8B67;
+  --serif: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
+  --sans: "Jost", "Futura", "Century Gothic", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; background: var(--bg); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; }
+p { margin: 0; }
+h1, h2, h3, h4 { margin: 0; font-weight: 500; text-wrap: balance; }
+ul { list-style: none; margin: 0; padding: 0; }
+:focus-visible { outline: 1.5px solid var(--jade); outline-offset: 4px; border-radius: 2px; }
+
+.grain {
+  position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: 0.07;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+/* Header */
+.top {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(12, 23, 20, 0.72);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; gap: 40px; height: 68px; }
+.mark { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 27px; letter-spacing: 0.01em; text-decoration: none; line-height: 1; }
+.links { display: flex; gap: 30px; margin-left: auto; }
+.links a { font-size: 14.5px; color: var(--muted); text-decoration: none; transition: color .2s; }
+.links a:hover { color: var(--text); }
+.lang { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--muted); }
+.lang button {
+  font: inherit; background: none; border: 0; padding: 2px 1px; cursor: pointer; color: var(--muted);
+  text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 5px;
+}
+.lang button[aria-pressed="true"] { color: var(--text); text-decoration-color: var(--jade); }
+
+/* Hero */
+.hero {
+  position: relative;
+  padding: 96px 0 72px;
+  background: radial-gradient(52% 62% at 92% 0%, rgba(46, 139, 103, 0.30), transparent 70%);
+}
+.role { font-size: 16px; letter-spacing: 0.02em; color: var(--jade); }
+.hero-grid {
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 28px; row-gap: 40px;
+  align-items: end; margin-top: 22px;
+}
+.name {
+  grid-column: 1 / 8;
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(76px, 12.6vw, 164px); line-height: 0.86; letter-spacing: -0.012em;
+}
+.name span { display: block; animation: rise .95s cubic-bezier(.2, .7, .2, 1) both; }
+.name span + span { animation-delay: .09s; padding-left: 0.42em; }
+@keyframes rise { from { opacity: 0.15; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.hero-side { grid-column: 8 / 13; padding-bottom: 10px; }
+.lead { font-size: 18.5px; font-weight: 300; line-height: 1.65; color: #DCD6C9; }
+.actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 28px; margin-top: 30px; }
+.btn {
+  display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px;
+  border-radius: 999px; background: var(--text); color: #0C1714;
+  font-size: 15px; font-weight: 500; text-decoration: none;
+  transition: background .2s;
+}
+.btn:hover { background: #FFFFFF; }
+.tlink {
+  font-size: 15px; text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 6px; text-decoration-color: rgba(236, 230, 217, 0.4); transition: text-decoration-color .2s, color .2s;
+}
+.tlink:hover { color: var(--jade); text-decoration-color: var(--jade); }
+
+/* Career ruler */
+.career { margin-top: 84px; }
+.ruler { position: relative; height: 58px; }
+.ruler::after { content: ""; position: absolute; left: 0; right: 0; bottom: 24px; height: 1px; background: var(--line); }
+.ruler .t {
+  position: absolute; bottom: 24px; width: 1px; height: 9px; margin-left: -0.5px;
+  background: rgba(236, 230, 217, 0.26);
+  transform-origin: bottom;
+  animation: tick .7s cubic-bezier(.2, .7, .2, 1) both;
+  animation-delay: calc(var(--i) * 8ms + 250ms);
+}
+.ruler .t.y { height: 20px; background: rgba(236, 230, 217, 0.62); }
+.ruler .t.now { height: 30px; background: var(--jade); margin-left: -1px; }
+.ruler .t.now::before {
+  content: ""; position: absolute; top: -3px; left: -3px; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--jade); box-shadow: 0 0 14px 2px rgba(142, 216, 180, 0.45);
+}
+@keyframes tick { from { transform: scaleY(0.1); } to { transform: scaleY(1); } }
+.ruler .lbl {
+  position: absolute; bottom: 0; transform: translateX(5px);
+  font-family: var(--serif); font-style: italic; font-size: 16px; line-height: 1; color: var(--muted);
+  font-variant-numeric: lining-nums;
+}
+.ruler .lbl.end { left: auto; right: 0; transform: none; color: var(--jade); }
+.career-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 40px; margin-top: 22px; color: var(--muted); font-size: 15px; }
+.exp { font-family: var(--serif); font-style: italic; font-size: 24px; color: var(--text); margin-right: auto; }
+.avail { display: inline-flex; align-items: center; gap: 10px; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--jade); box-shadow: 0 0 10px 1px rgba(142, 216, 180, 0.5); }
+
+/* Sections */
+.sec {
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 28px; row-gap: 28px;
+  padding-top: 128px; scroll-margin-top: 40px;
+}
+.sec-h {
+  grid-column: 1 / 5;
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(42px, 5vw, 62px); line-height: 1; letter-spacing: -0.005em;
+}
+.sec-b { grid-column: 5 / 13; min-width: 0; }
+
+.stand { font-family: var(--serif); font-size: clamp(25px, 2.5vw, 31px); line-height: 1.32; font-weight: 400; }
+.prose { display: grid; gap: 16px; margin-top: 30px; max-width: 62ch; color: #CEC8BB; font-weight: 300; }
+.sub { font-family: var(--serif); font-style: italic; font-size: 27px; margin: 64px 0 26px; }
+.principles { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+.principles li { padding: 22px 0 26px; border-top: 1px solid var(--line); }
+.principles h4 { font-family: var(--sans); font-size: 16.5px; font-weight: 500; margin-bottom: 8px; }
+.principles p { font-size: 15.5px; color: var(--muted); font-weight: 300; }
+
+.note { font-family: var(--serif); font-style: italic; font-size: 23px; line-height: 1.4; color: var(--muted); max-width: 40ch; margin-bottom: 40px; }
+.rows li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px 36px; padding: 28px 0; border-top: 1px solid var(--line); }
+.rows li:last-child { border-bottom: 1px solid var(--line); }
+.rows h3 { font-family: var(--serif); font-size: 28px; line-height: 1.15; font-weight: 500; }
+.rows p { color: var(--muted); font-weight: 300; font-size: 16px; padding-top: 4px; }
+
+.log li { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 8px 28px; padding: 30px 0; border-top: 1px solid var(--line); }
+.log li:last-child { border-bottom: 1px solid var(--line); }
+.tag { font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1.4; color: var(--jade); }
+.log h3 { font-family: var(--sans); font-size: 19px; font-weight: 500; line-height: 1.4; margin-bottom: 8px; }
+.log p { color: var(--muted); font-weight: 300; font-size: 16px; max-width: 60ch; }
+
+.stack div { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 6px 28px; padding: 22px 0; border-top: 1px solid var(--line); align-items: baseline; }
+.stack div:last-child { border-bottom: 1px solid var(--line); }
+.stack dt { font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--muted); }
+.stack dd { margin: 0; font-size: 17px; font-weight: 300; line-height: 1.7; }
+.stack { margin: 0; }
+
+/* Contact */
+.contact {
+  margin-top: 150px; padding: 120px 0 110px; border-top: 1px solid var(--line);
+  background: radial-gradient(55% 60% at 12% 45%, rgba(46, 139, 103, 0.20), transparent 70%);
+  scroll-margin-top: 40px;
+}
+.big { font-family: var(--serif); font-weight: 500; font-size: clamp(64px, 11vw, 148px); line-height: 0.9; letter-spacing: -0.01em; }
+.contact-row { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 28px; row-gap: 32px; margin-top: 48px; align-items: end; }
+.contact-text { grid-column: 1 / 6; color: #CEC8BB; font-weight: 300; font-size: 18px; }
+.biglinks { grid-column: 7 / 13; display: flex; flex-wrap: wrap; gap: 8px 48px; justify-content: flex-end; }
+.biglinks a {
+  font-family: var(--serif); font-style: italic; font-size: clamp(36px, 4vw, 50px); line-height: 1.1;
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 10px;
+  text-decoration-color: rgba(236, 230, 217, 0.35); transition: color .2s, text-decoration-color .2s;
+}
+.biglinks a:hover { color: var(--jade); text-decoration-color: var(--jade); }
+.foot .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 28px; padding-bottom: 40px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--muted); }
+.foot a { text-decoration: none; }
+.foot a:hover { color: var(--text); }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .links { display: none; }
+  .lang { margin-left: auto; }
+  .name, .hero-side, .sec-h, .sec-b, .contact-text, .biglinks { grid-column: 1 / -1; }
+  .biglinks { justify-content: flex-start; }
+  .sec { padding-top: 96px; }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 22px; }
+  .top .wrap { height: 60px; }
+  .hero { padding: 56px 0 56px; }
+  .name { font-size: clamp(64px, 21vw, 96px); }
+  .career { margin-top: 56px; }
+  .exp { font-size: 22px; flex-basis: 100%; }
+  .principles, .rows li, .log li, .stack div { grid-template-columns: 1fr; }
+  .rows h3 { font-size: 26px; }
+  .contact { margin-top: 110px; padding: 88px 0 80px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .name span, .ruler .t { animation: none; }
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#inicio" aria-label="João Hudson">JH</a>
+    <nav class="links" aria-label="Seções" data-i18n-aria="navAria">
+      <a href="#sobre" data-i18n="navAbout">Sobre</a>
+      <a href="#experiencia" data-i18n="navExp">Experiência</a>
+      <a href="#destaques" data-i18n="navHigh">Destaques</a>
+      <a href="#stack" data-i18n="navStack">Stack</a>
+      <a href="#contato" data-i18n="navContact">Contato</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Idioma" data-i18n-aria="langAria">
+      <button type="button" id="lang-pt" data-lang="pt" aria-pressed="true">PT</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <p class="role" data-i18n="role">Engenheiro de Software Sênior</p>
+      <div class="hero-grid">
+        <h1 class="name"><span>João</span><span>Hudson</span></h1>
+        <div class="hero-side">
+          <p class="lead" data-i18n="lead">Construo e mantenho sistemas críticos para o mercado financeiro. Meu diferencial é encontrar a causa de falhas difíceis em produção e garantir que elas não voltem.</p>
+          <div class="actions">
+            <a class="btn" href="https://www.linkedin.com/in/jo%C3%A3o-hudson-lacerda-oliveira-3b4b84198/" target="_blank" rel="noopener" data-i18n="ctaLinkedin">Falar pelo LinkedIn</a>
+            <a class="tlink" href="https://github.com/joaohudson" target="_blank" rel="noopener" data-i18n="ctaGithub">Ver GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="career">
+        <div class="ruler" id="ruler" role="img" aria-label="Linha do tempo da carreira" data-i18n-aria="uptimeAria"></div>
+        <div class="career-meta">
+          <p class="exp" data-i18n="uptime">Quase 6 anos em produção</p>
+          <p class="avail"><span class="dot" aria-hidden="true"></span><span data-i18n="avail">Disponível para vagas e projetos</span></p>
+          <p data-i18n="place">Brasil, trabalho remoto</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="sec" id="sobre">
+      <h2 class="sec-h" data-i18n="navAbout">Sobre</h2>
+      <div class="sec-b">
+        <p class="stand" data-i18n="about1">Sou engenheiro de software com cerca de seis anos de experiência em sistemas do mercado financeiro, passando por pagamentos, crédito, carteira digital e programas de fidelidade. Atuo principalmente no back-end, com Java, Kotlin, Node.js e .NET, e trabalho no front-end com React quando o projeto pede.</p>
+        <div class="prose">
+          <p data-i18n="about2">O que mais me motiva é estabilidade em produção. Gosto de investigar falhas difíceis de rastrear, chegar à causa raiz e deixar o sistema mais resistente. Também valorizo código bem testado, revisões cuidadosas e compartilhar conhecimento com o time.</p>
+          <p data-i18n="about3">Fora do trabalho, me interesso por computação gráfica, desenvolvimento de jogos e compiladores.</p>
+        </div>
+        <h3 class="sub" data-i18n="howTitle">Como eu trabalho</h3>
+        <ul class="principles">
+          <li><h4 data-i18n="p1t">Diagnóstico de falhas</h4><p data-i18n="p1d">Investigo incidentes até a causa raiz e implemento salvaguardas para que não se repitam.</p></li>
+          <li><h4 data-i18n="p2t">Performance e arquitetura</h4><p data-i18n="p2d">Desenho e otimizo serviços, consultas e fluxos para alto volume, mantendo a estabilidade.</p></li>
+          <li><h4 data-i18n="p3t">Qualidade</h4><p data-i18n="p3d">Testes automatizados, revisão de código e boas práticas fazem parte de cada entrega.</p></li>
+          <li><h4 data-i18n="p4t">Liderança técnica</h4><p data-i18n="p4d">Apoio decisões técnicas, ajudo a definir padrões e oriento colegas no dia a dia.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sec" id="experiencia">
+      <h2 class="sec-h" data-i18n="navExp">Experiência</h2>
+      <div class="sec-b">
+        <p class="note" data-i18n="expNote">Atuação direta e por meio de consultoria de TI em empresas de referência do mercado financeiro brasileiro.</p>
+        <ul class="rows">
+          <li><h3 data-i18n="d1t">Infraestrutura de pagamentos e banking</h3><p data-i18n="d1d">Plataforma que permite a outras empresas emitir cartões, processar pagamentos e oferecer contas digitais.</p></li>
+          <li><h3 data-i18n="d2t">Carteira e banco digital</h3><p data-i18n="d2d">Uma das maiores carteiras digitais do Brasil, com dezenas de milhões de usuários.</p></li>
+          <li><h3 data-i18n="d3t">Recompensas e fidelidade</h3><p data-i18n="d3d">O maior programa de recompensas do país, com acúmulo e resgate de pontos e marketplace próprio.</p></li>
+          <li><h3 data-i18n="d4t">Crédito e serviços financeiros no varejo</h3><p data-i18n="d4d">Braço financeiro de uma das maiores redes varejistas do país, com cartões, crédito e conta digital.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sec" id="destaques">
+      <h2 class="sec-h" data-i18n="navHigh">Destaques</h2>
+      <div class="sec-b">
+        <ul class="log">
+          <li><span class="tag" data-i18n="h1tag">confiabilidade</span><div><h3 data-i18n="h1t">Falhas difíceis de rastrear em produção</h3><p data-i18n="h1d">Investiguei e corrigi falhas em ambiente produtivo cuja causa era difícil de identificar, atuando na origem do problema para evitar que voltassem.</p></div></li>
+          <li><span class="tag">performance</span><div><h3 data-i18n="h2t">Consulta mais lenta cerca de 100× mais rápida</h3><p data-i18n="h2d">Reestruturei uma base MongoDB e a consulta mais lenta passou a responder cerca de 100 vezes mais rápido.</p></div></li>
+          <li><span class="tag" data-i18n="h3tag">dados</span><div><h3 data-i18n="h3t">Alto volume de ingestão sem perda de dados</h3><p data-i18n="h3d">Implementei fluxos preparados para alto volume de ingestão, protegendo informações críticas, como parcelas, contra perda.</p></div></li>
+          <li><span class="tag" data-i18n="h4tag">modernização</span><div><h3 data-i18n="h4t">Legado migrado para tecnologia atual</h3><p data-i18n="h4d">Migrei um sistema legado para um novo serviço construído com tecnologia moderna.</p></div></li>
+          <li><span class="tag" data-i18n="h5tag">mentoria</span><div><h3 data-i18n="h5t">Agregações MongoDB aplicadas do jeito certo</h3><p data-i18n="h5d">Orientei o time no uso de agregações do MongoDB com anotações em Java, e a equipe passou a aplicar o padrão corretamente.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sec" id="stack">
+      <h2 class="sec-h">Stack</h2>
+      <div class="sec-b">
+        <dl class="stack">
+          <div><dt data-i18n="gLang">Linguagens</dt><dd>Java, Kotlin, TypeScript, JavaScript, C#</dd></div>
+          <div><dt>Back-end</dt><dd>Spring Boot, Node.js, Express, Socket.io, ASP.NET Core</dd></div>
+          <div><dt>Front-end</dt><dd>React</dd></div>
+          <div><dt data-i18n="gData">Dados e mensageria</dt><dd>PostgreSQL, SQL Server, Oracle Database, MongoDB, Kafka, RabbitMQ</dd></div>
+          <div><dt data-i18n="gCloud">Cloud e infraestrutura</dt><dd>AWS, Google Cloud, Docker, Kubernetes, Terraform</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="sec" id="formacao">
+      <h2 class="sec-h" data-i18n="eduTitle">Formação</h2>
+      <div class="sec-b">
+        <ul class="rows">
+          <li><h3 data-i18n="e1t">Bacharelado em Ciência da Computação</h3><p data-i18n="e1d">Graduação concluída</p></li>
+          <li><h3 data-i18n="e2t">Certificação Kubernetes</h3><p data-i18n="e2d">Orquestração de containers</p></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <section class="contact" id="contato">
+    <div class="wrap">
+      <h2 class="big" data-i18n="cTitle">Vamos conversar</h2>
+      <div class="contact-row">
+        <p class="contact-text" data-i18n="cText">Estou aberto a novas vagas e a projetos sob demanda. O caminho mais rápido para falar comigo é uma mensagem no LinkedIn.</p>
+        <div class="biglinks">
+          <a href="https://www.linkedin.com/in/jo%C3%A3o-hudson-lacerda-oliveira-3b4b84198/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/joaohudson" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 João Hudson</span>
+    <a href="#inicio" data-i18n="backTop">Voltar ao topo</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Início da carreira profissional (mês de 1 a 12). Todo o tempo de experiência exibido é calculado a partir daqui.
+  var CAREER_START = { year: 2020, month: 12 };
+
+  var now = new Date();
+  var months = Math.max(1, (now.getFullYear() - CAREER_START.year) * 12 + (now.getMonth() + 1 - CAREER_START.month));
+  var years = Math.max(1, Math.round(months / 12));
+  var diff = months - years * 12; // < 0: ainda não completou; > 0: já passou
+
+  var WORDS = {
+    pt: ["zero", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze", "doze", "treze", "catorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove", "vinte"],
+    en: ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"]
+  };
+
+  function expTokens(lang) {
+    var en = lang === "en";
+    var unit = years === 1 ? (en ? "year" : "ano") : (en ? "years" : "anos");
+    var prefix = diff < 0 ? (en ? "almost " : "quase ") : diff > 0 ? (en ? "over " : "mais de ") : "";
+    var exp = prefix + years + " " + unit;
+    var word = WORDS[en ? "en" : "pt"][years] || String(years);
+    return {
+      "{exp}": exp,
+      "{Exp}": exp.charAt(0).toUpperCase() + exp.slice(1),
+      "{expWords}": word + " " + unit
+    };
+  }
+
+  function fill(text, tokens) {
+    return text.replace(/\{exp\}|\{Exp\}|\{expWords\}/g, function (t) { return tokens[t]; });
+  }
+
+  var I18N = {
+    pt: {
+      navAria: "Seções", langAria: "Idioma",
+      navAbout: "Sobre", navExp: "Experiência", navHigh: "Destaques", navStack: "Stack", navContact: "Contato",
+      role: "Engenheiro de Software Sênior",
+      lead: "Construo e mantenho sistemas críticos para o mercado financeiro. Meu diferencial é encontrar a causa de falhas difíceis em produção e garantir que elas não voltem.",
+      ctaLinkedin: "Falar pelo LinkedIn", ctaGithub: "Ver GitHub",
+      avail: "Disponível para vagas e projetos", place: "Brasil, trabalho remoto",
+      uptimeAria: "Linha do tempo com um traço por mês, somando {exp} de atuação em produção",
+      uptime: "{Exp} em produção", today: "hoje",
+      about1: "Sou engenheiro de software com cerca de {expWords} de experiência em sistemas do mercado financeiro, passando por pagamentos, crédito, carteira digital e programas de fidelidade. Atuo principalmente no back-end, com Java, Kotlin, Node.js e .NET, e trabalho no front-end com React quando o projeto pede.",
+      about2: "O que mais me motiva é estabilidade em produção. Gosto de investigar falhas difíceis de rastrear, chegar à causa raiz e deixar o sistema mais resistente. Também valorizo código bem testado, revisões cuidadosas e compartilhar conhecimento com o time.",
+      about3: "Fora do trabalho, me interesso por computação gráfica, desenvolvimento de jogos e compiladores.",
+      howTitle: "Como eu trabalho",
+      p1t: "Diagnóstico de falhas", p1d: "Investigo incidentes até a causa raiz e implemento salvaguardas para que não se repitam.",
+      p2t: "Performance e arquitetura", p2d: "Desenho e otimizo serviços, consultas e fluxos para alto volume, mantendo a estabilidade.",
+      p3t: "Qualidade", p3d: "Testes automatizados, revisão de código e boas práticas fazem parte de cada entrega.",
+      p4t: "Liderança técnica", p4d: "Apoio decisões técnicas, ajudo a definir padrões e oriento colegas no dia a dia.",
+      expNote: "Atuação direta e por meio de consultoria de TI em empresas de referência do mercado financeiro brasileiro.",
+      d1t: "Infraestrutura de pagamentos e banking", d1d: "Plataforma que permite a outras empresas emitir cartões, processar pagamentos e oferecer contas digitais.",
+      d2t: "Carteira e banco digital", d2d: "Uma das maiores carteiras digitais do Brasil, com dezenas de milhões de usuários.",
+      d3t: "Recompensas e fidelidade", d3d: "O maior programa de recompensas do país, com acúmulo e resgate de pontos e marketplace próprio.",
+      d4t: "Crédito e serviços financeiros no varejo", d4d: "Braço financeiro de uma das maiores redes varejistas do país, com cartões, crédito e conta digital.",
+      h1tag: "confiabilidade", h1t: "Falhas difíceis de rastrear em produção", h1d: "Investiguei e corrigi falhas em ambiente produtivo cuja causa era difícil de identificar, atuando na origem do problema para evitar que voltassem.",
+      h2t: "Consulta mais lenta cerca de 100× mais rápida", h2d: "Reestruturei uma base MongoDB e a consulta mais lenta passou a responder cerca de 100 vezes mais rápido.",
+      h3tag: "dados", h3t: "Alto volume de ingestão sem perda de dados", h3d: "Implementei fluxos preparados para alto volume de ingestão, protegendo informações críticas, como parcelas, contra perda.",
+      h4tag: "modernização", h4t: "Legado migrado para tecnologia atual", h4d: "Migrei um sistema legado para um novo serviço construído com tecnologia moderna.",
+      h5tag: "mentoria", h5t: "Agregações MongoDB aplicadas do jeito certo", h5d: "Orientei o time no uso de agregações do MongoDB com anotações em Java, e a equipe passou a aplicar o padrão corretamente.",
+      gLang: "Linguagens", gData: "Dados e mensageria", gCloud: "Cloud e infraestrutura",
+      eduTitle: "Formação",
+      e1t: "Bacharelado em Ciência da Computação", e1d: "Graduação concluída",
+      e2t: "Certificação Kubernetes", e2d: "Orquestração de containers",
+      cTitle: "Vamos conversar",
+      cText: "Estou aberto a novas vagas e a projetos sob demanda. O caminho mais rápido para falar comigo é uma mensagem no LinkedIn.",
+      backTop: "Voltar ao topo"
+    },
+    en: {
+      navAria: "Sections", langAria: "Language",
+      navAbout: "About", navExp: "Experience", navHigh: "Highlights", navStack: "Stack", navContact: "Contact",
+      role: "Senior Software Engineer",
+      lead: "I build and maintain critical systems for the financial sector. What sets me apart is finding the cause of hard production failures and making sure they don't come back.",
+      ctaLinkedin: "Contact me on LinkedIn", ctaGithub: "View GitHub",
+      avail: "Available for roles and projects", place: "Brazil, working remotely",
+      uptimeAria: "Timeline with one mark per month, adding up to {exp} working in production",
+      uptime: "{Exp} in production", today: "today",
+      about1: "I'm a software engineer with about {expWords} of experience in financial systems, spanning payments, credit, digital wallets and loyalty programs. I work mostly on the back end with Java, Kotlin, Node.js and .NET, and on the front end with React when the project calls for it.",
+      about2: "What drives me most is stability in production. I enjoy investigating hard-to-trace failures, getting to the root cause and leaving the system more resilient. I also value well-tested code, careful reviews and sharing knowledge with the team.",
+      about3: "Outside work, I'm into computer graphics, game development and compilers.",
+      howTitle: "How I work",
+      p1t: "Failure diagnosis", p1d: "I investigate incidents down to the root cause and put safeguards in place so they don't happen again.",
+      p2t: "Performance and architecture", p2d: "I design and tune services, queries and pipelines for high volume while keeping them stable.",
+      p3t: "Quality", p3d: "Automated tests, code review and sound engineering practices are part of every delivery.",
+      p4t: "Technical leadership", p4d: "I support technical decisions, help set standards and mentor teammates day to day.",
+      expNote: "Directly and through IT consultancy, at leading companies in Brazil's financial sector.",
+      d1t: "Payments and banking infrastructure", d1d: "A platform that lets other companies issue cards, process payments and offer digital accounts.",
+      d2t: "Digital wallet and bank", d2d: "One of Brazil's largest digital wallets, with tens of millions of users.",
+      d3t: "Rewards and loyalty", d3d: "Brazil's largest rewards program, with points earning, redemption and its own marketplace.",
+      d4t: "Retail credit and financial services", d4d: "The financial arm of one of Brazil's largest retail chains, offering cards, credit and digital accounts.",
+      h1tag: "reliability", h1t: "Hard-to-trace production failures", h1d: "Investigated and fixed production failures whose cause was hard to pin down, addressing the source so they wouldn't return.",
+      h2t: "Slowest query roughly 100× faster", h2d: "Restructured a MongoDB database so its slowest query became about 100 times faster.",
+      h3tag: "data", h3t: "High-volume ingestion with no data loss", h3d: "Built pipelines designed for high ingestion volumes that keep critical records, such as installments, from being lost.",
+      h4tag: "modernization", h4t: "Legacy moved to a modern stack", h4d: "Migrated a legacy system to a new service built on modern technology.",
+      h5tag: "mentoring", h5t: "MongoDB aggregations done right", h5d: "Coached the team on MongoDB aggregations with Java annotations, and the team went on to apply the pattern correctly.",
+      gLang: "Languages", gData: "Data and messaging", gCloud: "Cloud and infrastructure",
+      eduTitle: "Education",
+      e1t: "B.Sc. in Computer Science", e1d: "Completed",
+      e2t: "Kubernetes certification", e2d: "Container orchestration",
+      cTitle: "Let's talk",
+      cText: "I'm open to new roles and project-based work. The quickest way to reach me is a message on LinkedIn.",
+      backTop: "Back to top"
+    }
+  };
+
+  // Career ruler: one mark per month since CAREER_START, a taller mark each January, a jade mark for today.
+  var ruler = document.getElementById("ruler");
+  var parts = [];
+  var labelEvery = years > 9 ? 2 : 1;
+  for (var i = 0; i <= months; i++) {
+    var abs = CAREER_START.month - 1 + i;
+    var m = abs % 12;
+    var y = CAREER_START.year + Math.floor(abs / 12);
+    var pos = (i / months * 100).toFixed(3) + "%";
+    var cls = i === months ? "t now" : (m === 0 ? "t y" : "t");
+    parts.push('<i class="' + cls + '" style="left:' + pos + ';--i:' + i + '"></i>');
+    if (m === 0 && i !== months && y % labelEvery === 0) {
+      parts.push('<span class="lbl" data-frac="' + (i / months) + '" style="left:' + pos + '">' + y + "</span>");
+    }
+  }
+  parts.push('<span class="lbl end" data-i18n="today">hoje</span>');
+  ruler.innerHTML = parts.join("");
+
+  // Hide a year label when it would run into the "today" label at the current width.
+  function fitLabels() {
+    var w = ruler.clientWidth;
+    ruler.querySelectorAll(".lbl[data-frac]").forEach(function (el) {
+      el.style.visibility = (1 - parseFloat(el.getAttribute("data-frac"))) * w < 96 ? "hidden" : "";
+    });
+  }
+  fitLabels();
+  window.addEventListener("resize", fitLabels);
+
+  function setLang(lang) {
+    var dict = I18N[lang] || I18N.pt;
+    var tokens = expTokens(lang);
+    document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var v = dict[el.getAttribute("data-i18n")];
+      if (v != null) el.textContent = fill(v, tokens);
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+      var v = dict[el.getAttribute("data-i18n-aria")];
+      if (v != null) el.setAttribute("aria-label", fill(v, tokens));
+    });
+    document.querySelectorAll(".lang button").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false");
+    });
+    try { localStorage.setItem("jh-lang", lang); } catch (e) {}
+  }
+
+  document.querySelectorAll(".lang button").forEach(function (b) {
+    b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
+  });
+  var start = "pt";
+  var hash = (location.hash || "").slice(1).toLowerCase();
+  if (hash === "en" || hash === "pt") {
+    start = hash;
+  } else {
+    var saved = null;
+    try { saved = localStorage.getItem("jh-lang"); } catch (e) {}
+    if (saved === "pt" || saved === "en") start = saved;
+    else if (!/^pt/i.test(navigator.language || "pt")) start = "en";
+  }
+  setLang(start);
+})();
+</script>
+</body>
+</html>
