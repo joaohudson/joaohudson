@@ -33,9 +33,4 @@
   <img align="center" height="60" width="80" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg">
   <img align="center" height="60" width="80" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original.svg">
 </div>
-  
-  ##
-  
-- 🔭 I’m currently working on Taking.
-- 🎮 I have a strong interest in game development, I already have experience in the area.
-- 💻 I have experience with back end, front end and mobile development 📴
+ 
